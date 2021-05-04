@@ -10,10 +10,10 @@ class Word:
         self.word_length = word_length 
         # use word_length to build a function for difficulty: "easy", "normal" or "hard" levels
         word = random.choice(word.read())
-        return word.upper()
+        # return word.upper()
  
-    def show_mystery_word(word):
-        return '_ ' * len(word)
+    def show_mystery_word(self):
+        return '_ ' * len(self)
 
 
 #https://stackoverflow.com/questions/60617366/how-to-reveal-a-specific-letter-in-a-string-for-python
@@ -22,9 +22,10 @@ class Game:
     def __init__(self, difficulty):
         self.difficulty = difficulty
 
-    def attempt_guess():
+    def attempt_guess(self):
         total_guesses= 8
         guesses = 0
+        word = "spam"
         gameboard = show_mystery_word(word)
         print(gameboard)
         gameboard = list(gameboard)
@@ -44,6 +45,9 @@ class Game:
             print(guesses)
             if not "_" in gameboard:
                 print("Congratulations, You win! Would you like to play again?")
+
+def show_mystery_word(word):
+    return '_ ' * len(word)
 
 difficulty = input("Do you want to play difficulty level Easy, Normal, or Hard?" )
 new_game = Game(difficulty)
