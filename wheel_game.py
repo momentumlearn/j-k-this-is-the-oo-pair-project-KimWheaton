@@ -4,11 +4,11 @@ import random
 
 class Word:
     def __init__(self, word_length):
-        word = open('/Users/kimwheaton/Momentum/homework/j-k-this-is-the-oo-pair-project-KimWheaton/words.txt')
+        word = open('/Users/kimwheaton/Momentum/homework/j-k-this-is-the-oo-pair-project-KimWheaton/words.txt', 'r')
         word = word.read()
         self.word = word
         self.word_length = word_length 
-        # use word_length to build a function for "easy", "normal" or "hard" levels
+        # use word_length to build a function for difficulty: "easy", "normal" or "hard" levels
         word = random.choice(word.read())
         return word.upper()
  
@@ -19,9 +19,8 @@ class Word:
 #https://stackoverflow.com/questions/60617366/how-to-reveal-a-specific-letter-in-a-string-for-python
 
 class Game:
-    def __init__(self):
-        self.game = game
-        new_game = Game(#arguments)
+    def __init__(self, difficulty):
+        self.difficulty = difficulty
 
     def attempt_guess():
         total_guesses= 8
@@ -46,7 +45,9 @@ class Game:
             if not "_" in gameboard:
                 print("Congratulations, You win! Would you like to play again?")
 
+difficulty = input("Do you want to play difficulty level Easy, Normal, or Hard?" )
+new_game = Game(difficulty)
 new_game.attempt_guess()
 
-print()
+
     
